@@ -1,27 +1,18 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
+let db;
 
-let database;
+const connectDb = () => {
 
-async function connectDatabase() {
+    const url = 'mongodb+srv://sucode_server:mF9Zc3FSVCd2FhKi@clustersucode.cfectdm.mongodb.net/server?retryWrites=true&w=majority';
+    return db = mongoose.connect(url);
 
-    const url = 'mongodb://127.0.0.1:27017';
-    const client = new MongoClient(url);
-    await client.connect();
-    const dbName = 'sucode';
-    database = client.db(dbName);
-   
 }
 
-
-function getDatabase(){
-    if(database){
-        return database;
-    }
-    throw new Error();
+const getDb = () => {
+    if(db) return db;
+    throw new Error("Database not connected");
 }
 
-module.exports={
-    connectDatabase:connectDatabase,
-    getDatabase:getDatabase
-}
+exports.connectDb = connectDb;
+exports.getDb = getDb;

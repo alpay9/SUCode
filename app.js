@@ -43,13 +43,14 @@ app.use(configRoutes);
 app.use(baseRoutes);
 app.use(authRoutes);
 
-db.connectDatabase().then(
-    function(){
-        app.listen(3000);
-    }
-).catch(function(err){
-    console.log("Cannot connect to database");
-})
+db.connectDb()
+    .then( result => {
+            console.log("Connected to database");
+            app.listen(3000);
+        }
+    ).catch((err) => {
+        console.log(err);
+});
 
 
 
