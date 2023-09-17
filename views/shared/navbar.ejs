@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container">
+    <a class="navbar-brand px-3 mx-3" href="/"
+      ><img
+        src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-3772786-3146919.png?f=webp"
+        alt="sucode-logo"
+        style="width: 30px"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" href="/problems"
+            >Problems</a
+          >
+        </li>
+
+        <% if(locals.isAdmin){ %>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: #f6f1f1">Admin Page</a>
+            </li>
+        <% } %>
+      </ul>
+      <div class="d-lg-block">
+
+        <% if(!locals.isAuth){ %>
+
+            <a
+              class="btn btn-primary mx-3"
+              href="/signup"
+              role="button"
+              id="buttonregister"
+              >Register</a
+            >
+            <a
+              class="btn btn-primary mx-3"
+              href="/login"
+              role="button"
+              id="buttonsignin"
+              >Sign In</a
+            >
+
+        <% }else{ %>
+            <a
+              class="btn btn-primary mx-3"
+              href="/logout"
+              role="button"
+              id="buttonlogout"
+              >Logout</a
+            >
+        <% } %>
+
+        <% if(locals.colorMode==="dark"){ %>
+          <img src="/images/sun.png" id="iconsun" alt="" />
+
+        <% } else{%>
+          <img src="/images/moon.png" id="iconsun" alt="" />
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

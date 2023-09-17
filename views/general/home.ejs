@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <%- include("../shared/head",{pageTitle:"SUCode"}) %>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/home.css">
+    </head>
+
+
+    <body class="<%= (locals.colorMode === 'dark') ? 'dark-theme' : '' %>">
+        <header>
+            <%- include("../shared/navbar") %>
+        </header>
+
+
+
+        <main>
+
+            <div class="container-fluid" id="section1">
+                <div id='row1' class="row text-center align-items-center">
+
+                    <div class="col-lg-7" id="main-head">
+                        <p id="main-head-text">Welcome To SUCode</p>
+                        <p id="username-text"><%= locals.username %></p>
+                    </div>
+
+                    <div id="empty-para"class="col-lg-5 py-5">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime minima, quisquam fuga inventore cum debitis optio! Nemo nobis sed modi sequi, labore maiores incidunt! Similique velit modi saepe ducimus repellat et illum. Cum amet sed ex odio similique fuga labore vitae quia totam nostrum beatae eligendi molestiae, fugit eum maiores, reiciendis architecto laborum adipisci, a quas nobis! Nesciunt obcaecati officia consequuntur repellat aspernatur ratione quis perferendis. Eveniet repudiandae quo laborum officiis id dolore dolor quasi amet voluptatibus, molestias rerum earum consequuntur quae, quidem sapiente quos velit. Aspernatur obcaecati minima quibusdam perferendis. Soluta quae dicta aperiam sit maxime fugiat deleniti nulla?</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid" id="section2" style="padding-bottom: 100px;padding-top: 100px;">
+                <div class="row">
+
+            <div class="timeline col-lg-6 col-12 align-items-center">
+                <div class="row" style="padding-bottom: 40px;">
+                    <h1>Upcoming Events</h1>
+                </div>
+                <div class="timeline-item row">
+                    
+                    <div class="col-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                        </div>
+            
+                        <div class="col-11">
+                        <div class="timeline-content">
+                            <h3>2020</h3>
+                            <p>Yet another event description.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item row">
+                    
+                    <div class="col-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                        </div>
+            
+                        <div class="col-11">
+                        <div class="timeline-content">
+                            <h3>2020</h3>
+                            <p>Yet another event description.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item row">
+
+                    <div class="col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+                    </svg>
+                    </div>
+
+                    <div class="col-11">
+                    <div class="timeline-content">
+                        <h3>2020</h3>
+                        <p>Yet another event description.</p>
+                    </div>
+                </div>
+
+                </div>
+
+        
+        </div>
+        <div class="col-lg-6 col-12" id="paragraph-sec-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor harum aliquid natus saepe sequi nulla vero quae, tempore at quis labore! Delectus aut consectetur neque tenetur eaque et reiciendis aspernatur, quis a odio velit accusantium amet iste dolore pariatur esse? Voluptates eius veritatis deserunt consequuntur beatae explicabo possimus nisi aliquam atque! Et possimus perspiciatis ipsum voluptates? Autem modi quibusdam commodi accusantium provident eos id similique, amet deleniti nemo hic quidem neque est beatae explicabo iusto reiciendis ratione qui sunt. Assumenda quidem, hic aliquam esse, iusto voluptates placeat quos suscipit soluta laudantium voluptate nobis eius, doloribus rerum. Fuga alias ipsa eveniet.</p>
+        </div>
+
+
+        </div>
+        </div>
+
+
+
+            <div class="container-fluid px-4 py-5" style="padding-left: 50px;" id="section3">
+                <h2 style="padding-left: 10px;" class="pb-2 border-bottom">Why you need to Join us?
+                </h2>
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" id="row2">
+                <div class="feature col">  
+                    <h3 class="fs-2">Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="" class="btn btn-primary" id="buttonjoin">Join Now</a>
+                </div>
+                <div class="feature col">
+                    <h3 class="fs-2">Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="" class="btn btn-primary" id="buttonjoin">Join Now</a>
+                </div> 
+                <div class="feature col">
+                    <h3 class="fs-2">Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="" class="btn btn-primary" id="buttonjoin">Join Now</a>
+                </div>
+                </div>
+            </div>
+
+            </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    </body>
+
+    
+
+</html>
