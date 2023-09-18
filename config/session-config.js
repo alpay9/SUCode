@@ -1,6 +1,7 @@
 
 const session=require("express-session");
 const MongoDBStore = require('connect-mongodb-session')(session);
+const url = require('../data/database').url;
 
 
 function getSessionObject(store,rememberMe){
@@ -19,8 +20,8 @@ function getSessionObject(store,rememberMe){
 
 function getStorage(){
     const store = new MongoDBStore({
-        uri: 'mongodb://127.0.0.1:27017',
-        databaseName:"sucode",
+        uri: 'mongodb+srv://sucode_server:mF9Zc3FSVCd2FhKi@clustersucode.cfectdm.mongodb.net/?retryWrites=true&w=majority',
+        databaseName:"authentication",
         collection: 'sessions'
     });
     return store;
