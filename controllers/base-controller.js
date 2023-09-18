@@ -1,12 +1,7 @@
-function getHome(req,res){
+exports.getHome = (req, res) => {
     res.render("general/home");
 }
 
-function getProblems(req,res){
+exports.getProblems = (req, res) => {
     res.render("general/problems");
-}
-
-module.exports={
-   getHome:getHome,
-   getProblems:getProblems
 }
