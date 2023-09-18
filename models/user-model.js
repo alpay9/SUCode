@@ -1,34 +1,18 @@
-const db=require("../data/database")
-const mongodb=require("mongodb");
+const mongoose = require('mongoose');
+const getDb = require('../data/database').getDb;
+const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 
-class User{
-    constructor(email,password,id){
-        this.email=email;
-        this.password=password;
+const userSchema = new Schema({
+    username: {type:String, required:true},
+    email: {type:String, required:true},
+    password: {type:String, required:true},
+    isAdmin: {type:Boolean, required:true}
+});
 
-        
-    }
-
-    async save(accessLevel){
-    
-        await db.getDatabase().collection("users").insertOne({
-            email:this.email,
-            password:this.password,
-            accessLevel:accessLevel
-        });
-         
-    }
-
-    static async getUserWithSameEmail(email){
-        const user=await db.getDatabase().collection("users").findOne({
-            email:email
-        });
-        
-        return user;
-    }
-
-
+userSchema.methods.checkPassword = function(password) {
+    return bcrypt.compare(password, this.password);
 }
 
-module.exports=User;
+module.exports = mongoose.model('User', userSchema);
