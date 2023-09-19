@@ -6,6 +6,7 @@ const sessionConfig = require("./config/session-config");
 const authRoutes = require("./routes/auth-routes");
 const baseRoutes = require("./routes/base-routes");
 const configRoutes = require("./routes/config-routes");
+const adminRoutes = require("./routes/admin-routes");
 const localsMiddleware = require("./middlewares/set-locals");
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(localsMiddleware);
 app.use(configRoutes);
 app.use(baseRoutes);
 app.use(authRoutes);
+app.use(adminRoutes);
 
 db.connectDb()
     .then((result) => {
