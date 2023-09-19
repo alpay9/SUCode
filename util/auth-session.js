@@ -1,10 +1,7 @@
 exports.createAuthSession = (req, user) => {
     req.session.userId = user._id.toString();
     req.session.username = user.email.split("@")[0];
-
-    if (user.accessLevel !== 1) {
-        req.session.isAdmin = true;
-    }
+    req.session.isAdmin = user.isAdmin;
 };
 
 exports.resetAuthSession = (req) => {
