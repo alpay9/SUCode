@@ -12,5 +12,7 @@ exports.createUser = (email, password, isAdmin = false) => {
 };
 
 exports.getUserWithSameEmail = email => {
-    return User.findOne({ email: email });
+    User.findOne({ email: email }).then(user => {
+        return user;
+    });
 };
