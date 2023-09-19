@@ -10,7 +10,9 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.checkPassword = function (password) {
-    return bcrypt.compare(password, this.password);
+    bcrypt.compare(password, this.password).then((result) => {
+        return result;
+    })
 };
 
 module.exports = mongoose.model("User", userSchema);
