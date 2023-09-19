@@ -9,10 +9,9 @@ const userSchema = new Schema({
     isAdmin: { type: Boolean, required: true },
 });
 
-userSchema.methods.checkPassword = function (password) {
-    bcrypt.compare(password, this.password).then((result) => {
-        return result;
-    })
+userSchema.methods.checkPassword = async function (password) {
+    const result = await bcrypt.compare(password, this.password);
+    return result;
 };
 
 module.exports = mongoose.model("User", userSchema);

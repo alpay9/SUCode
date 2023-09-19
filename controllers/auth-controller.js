@@ -32,7 +32,7 @@ exports.postLogin = async (req, res) => {
     const existingUser = await User.getUserWithSameEmail(email);
 
     if (existingUser) {
-        const doesPasswordMatch = existingUser.checkPassword(password);
+        const doesPasswordMatch = await existingUser.checkPassword(password);
         if (doesPasswordMatch) {
             authSession.createAuthSession(req, existingUser);
 

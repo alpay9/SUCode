@@ -11,8 +11,7 @@ exports.createUser = (email, password, isAdmin = false) => {
     return user.save();
 };
 
-exports.getUserWithSameEmail = email => {
-    User.findOne({ email: email }).then(user => {
-        return user;
-    });
+exports.getUserWithSameEmail = async email => {
+    const user = await User.findOne({ email: email });
+    return user;
 };
