@@ -8,10 +8,5 @@ exports.checkIsAdmin = (req, res, next) => {
 };
 
 exports.getAdminPage = (req, res) => {
-    res.render("./general/admin");
+    res.render("./admin/admin");
 };
-
-//getUsers
-//getContests
-//getQuestions
-//getSubmissions
