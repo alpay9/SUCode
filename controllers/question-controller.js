@@ -35,8 +35,7 @@ exports.getQuestions = (req, res) => {
 };
 
 exports.getAddQuestion = (req, res, next) => {
-    res.render("./admin/edit/question", {
-        path: "/admin/add-product",
+    res.render("admin/edit/question", {
         editing: false,
     });
 };
@@ -49,7 +48,7 @@ exports.postAddQuestion = (req, res, next) => {
         isPublic: req.body.isPublic ? true : false,
     });
     question.save().then((result) => {
-        res.redirect("admin/questions");
+        res.redirect("/admin/questions");
     });
 };
 
@@ -57,11 +56,7 @@ exports.getEditQuestion = (req, res, next) => {
     const questionId = req.params.questionId;
     Question.findById(questionId)
         .then((question) => {
-            if (!question) {
-                return res.redirect("admin/questions");
-            }
             res.render("admin/edit/question", {
-                path: "/admin/edit-question",
                 editing: true,
                 question: question,
             });
