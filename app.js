@@ -38,7 +38,7 @@ app.use(configRoutes);
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(adminRoutes);
-app.use((req, res) => res.status(404).render("./general/error", { pageTitle: "Page Not Found" }));
+app.use((req, res) => res.status(404).render("general/error", { pageTitle: "Page Not Found" }));
 
 db.connectDb()
     .then((result) => {
