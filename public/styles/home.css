@@ -243,3 +243,36 @@ p{
 #check-user{
     display: none;
 }
+
+.admin-interface{
+    padding-top: 150px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-interface ul{
+    text-decoration: none;
+    list-style-type: none;
+    display: block;
+    gap: 20px;
+}
+
+
+.admin-interface ul li{
+    border-radius: 30px;
+    background-color: whitesmoke;
+    padding: 60px 120px;
+    margin: 100px 40px;
+    transition: .4s;
+}
+
+.admin-interface ul li a{
+    text-decoration: none;
+    color: #61677A;
+}
+
+.admin-interface ul li:hover{
+    transform: scale(1.3);
+}
