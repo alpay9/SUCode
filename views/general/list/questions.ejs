@@ -45,7 +45,7 @@
                 <div class="row">
                     <% for (let attName of attributes) { %>
                         <div class="col-3">
-                            <a><%= question[attName] %></a>
+                            <a <% if (attName === "title") { %>href="/problems/<%= question._id %>"<% } %>><%= question[attName] %></a>
                         </div>
                     <% } %>
                     <% if (editable) { %>

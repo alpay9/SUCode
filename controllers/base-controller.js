@@ -16,3 +16,17 @@ exports.getProblems = (req, res) => {
         })
         .catch((err) => console.log(err));
 };
+
+exports.getProblem = (req, res) => {
+    questionId = req.params.problemId;
+    Question.findById(questionId)
+        .then((question) => {
+            if(question.isPublic == false && !req.session.isAdmin){
+                return res.render("general/error", {pageTitle: "You have no access"});
+            }
+            res.render("general/question", { question: question });
+        })
+        .catch((err) => {
+            res.render("general/error", { pageTitle: "object not found" });
+        });
+};
