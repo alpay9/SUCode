@@ -1,6 +1,8 @@
 # SUCode
 
 ## Project Planning
+### Week 2
+#### - Code Runner @Alpay
 ### Week 1
 #### - Database deployment @Alpay
 #### - Database schema @Alpay
